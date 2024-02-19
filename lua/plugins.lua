@@ -12,6 +12,8 @@ function plugins(use)
 	use "neovim/nvim-lspconfig"
 	use "windwp/nvim-autopairs"
 	use "folke/tokyonight.nvim"
+	use "sindrets/diffview.nvim" 
+	use 'nvim-tree/nvim-web-devicons'
 end
 
 

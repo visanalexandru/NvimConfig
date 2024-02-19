@@ -2,6 +2,7 @@ local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {}
+lspconfig.clangd.setup {}
 
 -- Format on save.
 vim.api.nvim_create_autocmd('BufWritePre', {
