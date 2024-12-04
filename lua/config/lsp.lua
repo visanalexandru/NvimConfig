@@ -1,12 +1,13 @@
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.pylsp.setup {}
+lspconfig.ts_ls.setup {}
 lspconfig.rust_analyzer.setup {}
 lspconfig.clangd.setup {}
+lspconfig.gopls.setup {}
 
 -- Format on save.
 vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*.rs',
+  pattern = {'*.rs', '*.go', '*.py'},
   callback = function()
     vim.lsp.buf.format({ async = false})
   end,
@@ -33,5 +34,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Autocompletion on C-Space
-vim.api.nvim_set_keymap('i', '<C-Space>', '<C-x><C-o>', { noremap = true })
-
+vim.api.nvim_set_keymap('i', '<C-f>', '<C-x><C-o>', { noremap = true })

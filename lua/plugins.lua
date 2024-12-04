@@ -10,10 +10,22 @@ function plugins(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use "neovim/nvim-lspconfig"
-	use "windwp/nvim-autopairs"
+	use {
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-autopairs").setup {}
+		end
+	}
 	use "folke/tokyonight.nvim"
 	use "sindrets/diffview.nvim" 
 	use 'nvim-tree/nvim-web-devicons'
+	use "nvim-treesitter/nvim-treesitter"
+	use "nvim-treesitter/nvim-treesitter-context"
+	use "RRethy/vim-illuminate"
+	use 'tomasky/bookmarks.nvim'
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-rhuarb'
 end
 
 
