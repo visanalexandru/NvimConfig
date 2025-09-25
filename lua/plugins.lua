@@ -23,7 +23,6 @@ function plugins(use)
 	use "nvim-treesitter/nvim-treesitter"
 	use "nvim-treesitter/nvim-treesitter-context"
 	use "RRethy/vim-illuminate"
-	use 'tomasky/bookmarks.nvim'
 end
 
 

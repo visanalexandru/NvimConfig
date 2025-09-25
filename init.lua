@@ -24,7 +24,6 @@ require('config.lsp')
 require('config.treesitter')
 require('config.context')
 require('config.illuminate')
-require('config.bookmarks')
 require('config.telescope')
 
 vim.cmd[[colorscheme tokyonight]]
