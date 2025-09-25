@@ -24,8 +24,6 @@ function plugins(use)
 	use "nvim-treesitter/nvim-treesitter-context"
 	use "RRethy/vim-illuminate"
 	use 'tomasky/bookmarks.nvim'
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-rhuarb'
 end
 
 
