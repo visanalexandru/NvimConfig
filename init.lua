@@ -15,8 +15,6 @@ vim.opt.wrap = false
 vim.opt.list = true -- <- change here to `true` to see them
 vim.opt.listchars = { eol = "↵", tab = "→ ", nbsp = "·", space = "·", trail = "~" }
 
--- fugitive
-
 require('plugins')
 require('tokyonight').setup()
 require('config.gitsigns')

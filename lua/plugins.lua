@@ -1,7 +1,5 @@
 function plugins(use)
 	use "wbthomason/packer.nvim"
-	use "rafamadriz/neon"
-	use "shaunsingh/moonlight.nvim"
 	use "kyazdani42/nvim-tree.lua"
 	use "lewis6991/gitsigns.nvim"
 	use {
@@ -23,6 +21,7 @@ function plugins(use)
 	use "nvim-treesitter/nvim-treesitter"
 	use "nvim-treesitter/nvim-treesitter-context"
 	use "RRethy/vim-illuminate"
+	use "github/copilot.vim"
 end
 
 
