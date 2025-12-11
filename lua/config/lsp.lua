@@ -24,12 +24,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 	vim.api.nvim_set_keymap('i', '<C-f>', '<C-x><C-o>', { noremap = true })
 
-	-- Format on save.
-	vim.api.nvim_create_autocmd('BufWritePre', {
-	  pattern = {'*.rs', '*.go', '*.py'},
-	  callback = function()
-		vim.lsp.buf.format({ async = false, timeout_ms = 60000 })
-	  end,
-	})
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = vim.api.nvim_create_augroup("lsp_format_" .. ev.buf, { clear = true }),
+      buffer = ev.buf,
+      callback = function()
+        vim.lsp.buf.format({ async = false, timeout_ms = 60000 })
+        end,
+    })
   end,
 })
