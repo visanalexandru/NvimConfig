@@ -24,12 +24,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 	vim.api.nvim_set_keymap('i', '<C-f>', '<C-x><C-o>', { noremap = true })
 
+    local format_filetypes = { "go" }
     vim.api.nvim_create_autocmd('BufWritePre', {
       group = vim.api.nvim_create_augroup("lsp_format_" .. ev.buf, { clear = true }),
       buffer = ev.buf,
       callback = function()
-        vim.lsp.buf.format({ async = false, timeout_ms = 60000 })
-        end,
+        if vim.tbl_contains(format_filetypes, vim.bo.filetype) then
+          vim.lsp.buf.format({ async = false, timeout_ms = 60000 })
+        end
+      end,
     })
   end,
 })
